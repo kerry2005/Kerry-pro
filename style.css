@@ -1,1614 +1,239 @@
+/* ------------------------------------------------------------------- */
+/* --- 1. VARIYAB AK FONDASYON --- */
+/* ------------------------------------------------------------------- */
+:root {
+    --primary-neon: #38ef7d;
+    --dark-bg: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #ffffff;
+    --text-muted: #e2e8f0;
+}
 
-/* css pour index */
-/* General Body Styling */
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-main);
 }
 
-/* Navbar Styling */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
+/* ------------------------------------------------------------------- */
+/* --- 2. FOTO PWOFIL (POU À PROPOS) --- */
+/* ------------------------------------------------------------------- */
+.profile-img-container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
+.profile-glow {
+    border: 3px solid var(--primary-neon);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(56, 239, 125, 0.4);
+    max-height: 500px; 
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
+/* ------------------------------------------------------------------- */
+/* --- 3. ESTIL POU PWOJÈ YO (SA RANJE FOTO YO) --- */
+/* ------------------------------------------------------------------- */
+
+/* Kat pwojè a */
+.project-card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden; /* Sa anpeche anyen debòde */
+    border: 1px solid rgba(56, 239, 125, 0.2);
+    transition: 0.4s ease;
+    height: 300px; /* Wotè fiks pou tout kat yo menm gwosè */
 }
 
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* About Section Styling */
-.about-section {
-    padding: 60px 0;
-    background-color: #e9ecef; /* Slightly darker background than body */
-    border-bottom: 1px solid #dee2e6; /* Separator line */
-}
-
-.about-section h2 {
-    color: #007bff; /* Bootstrap primary blue */
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.about-section p.lead {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: #555;
-}
-
-/* Hero Section (Carousel) Styling */
-.hero-section {
-    padding: 40px 0; /* Adjust padding as needed */
-    text-align: center;
-    background-color: #ffffff; /* White background for the carousel section */
-    flex-grow: 1; /* Allows it to take up available space */
-}
-
-.carousel {
-    max-width: 800px; /* Limit carousel width */
-    margin: 0 auto; /* Center the carousel */
-    border-radius: 8px; /* Rounded corners for the carousel container */
-    overflow: hidden; /* Ensures content respects border-radius */
-    box-shadow: 0 4px 12px rgba(0,0,0,.15); /* More pronounced shadow */
-}
-
-.carousel-item img {
+/* Veso pou foto pwojè a */
+.project-img {
     width: 100%;
-    height: 450px; /* **Adjust this height to make images smaller** */
-    object-fit: cover; /* Ensures images cover the area without distortion */
-    border-radius: 8px; /* Apply border-radius to images inside carousel */
+    height: 100%;
+    position: relative;
 }
 
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for captions */
-    padding: 15px;
-    border-radius: 5px;
-    bottom: 20px; /* Position caption slightly up from the bottom */
-}
-
-.carousel-caption h5 {
-    font-size: 1.75rem;
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-.carousel-caption p {
-    font-size: 1rem;
-    color: #f8f9fa;
-}
-
-/* Main Content Styling */
-main {
-    flex-grow: 1; /* Ensures the main content takes up remaining vertical space */
-}
-
-.hero-section h1.display-4 {
-    color: #007bff;
-    margin-top: 30px;
-    font-size: 3rem;
-}
-
-.hero-section p.lead {
-    font-size: 1.5rem;
-    color: #6c757d; /* Muted grey for lead text */
-    margin-bottom: 30px;
-}
-
-.hero-section .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 12px 28px;
-    font-size: 1.2rem;
-    border-radius: 50px; /* Pill-shaped button */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero-section .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px); /* Slight lift on hover */
-}
-
-/* Footer Styling */
-.footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* pour photes en carrousel */
-/* Hero Section (Carousel) Styling */
-.hero-section {
-    padding: 40px 0; /* Ajustez le padding si nécessaire */
-    text-align: center;
-    background-color: #ffffff; /* Fond blanc pour la section du carrousel */
-    flex-grow: 1; /* Permet d'occuper l'espace disponible */
-}
-
-.carousel {
-    max: width 450px; /* **Largeur maximale du carrousel : diminuée ici** */
-    margin: 0 auto; /* Centre le carrousel */
-    border-radius: 8px; /* Coins arrondis pour le conteneur du carrousel */
-    overflow: hidden; /* Assure que le contenu respecte le border-radius */
-    box-shadow: 0 4px 12px rgba(0,0,0,.15); /* Ombre plus prononcée */
-}
-
-.carousel-item img {
-    width: 90%; /* S'assure que l'image remplit la largeur du carrousel */
-    height: 200px; /* **Hauteur des images : diminuée ici** */
-    object-fit: cover; /* Assure que les images couvrent la zone sans distorsion */
-    border-radius: 8px; /* Applique le border-radius aux images à l'intérieur du carrousel */
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.6); /* Fond noir semi-transparent pour les légendes */
-    padding: 15px;
-    border-radius: 5px;
-    bottom: 20px; /* Positionne la légende légèrement au-dessus du bas */
-}
-
-.carousel-caption h5 {
-    font-size: 1.5rem; /* Taille de police légèrement réduite */
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-.carousel-caption p {
-    font-size: 0.9rem; /* Taille de police légèrement réduite */
-    color: #f8f9fa;
-}
-
-/* css pour apropos */
-/* General Body Styling (consistent with index.html) */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
-}
-
-/* Navbar Styling (consistent with index.html) */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* Main content area */
-main {
-    flex-grow: 1; /* Ensures the main content takes up available vertical space */
-}
-
-/* About Section Specific Styling */
-#about {
-    background-color: #ffffff; /* White background for the about section */
-    padding: 60px 0; /* Vertical padding */
-    border-bottom: 1px solid #e9ecef; /* Subtle bottom border */
-}
-
-.profile-img {
-    width: 250px; /* **Fixed width for profile image** */
-    height: 250px; /* **Fixed height for profile image** */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    border: 5px solid #007bff; /* Primary color border around profile image */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); /* Soft shadow with primary color tint */
-}
-
-h2.display-4 {
-    color: #343a40; /* Darker heading color */
-    font-weight: 600;
-    font-size: 2.8rem;
-}
-
-h2.display-4 .text-primary {
-    color: #007bff !important; /* Bootstrap primary blue */
-}
-
-p.lead {
-    font-size: 1.15rem;
-    color: #555;
-    line-height: 1.8;
-}
-
-h3 {
-    color: #343a40; /* Darker heading color for sub-sections */
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-h6.text-primary {
-    color: #007bff !important; /* Bootstrap primary blue for sub-headings */
-    font-size: 1.1rem;
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
-
-hr.my-5 {
-    border-top: 2px solid #e9ecef; /* Thicker, light grey horizontal rule */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .profile-img {
-        width: 180px;
-        height: 180px;
-    }
-    h2.display-4 {
-        font-size: 2.2rem;
-        text-align: center;
-    }
-    p.lead {
-        text-align: center;
-        font-size: 1rem;
-    }
-    h3 {
-        text-align: center;
-        font-size: 1.75rem;
-    }
-    h6.text-primary {
-        text-align: center;
-        font-size: 1rem;
-    }
-}
-
-/* Footer Styling (consistent with index.html) */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* css pour competences */
-/* General Body Styling (consistent across pages) */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
-}
-
-/* Navbar Styling (consistent across pages) */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* Main Content Area */
-main {
-    flex-grow: 1; /* Ensures the main content takes up remaining vertical space */
-}
-
-/* Competences Section Specific Styling */
-#competences {
-    background-color: #ffffff; /* White background for the skills section */
-    padding: 60px 0; /* Vertical padding */
-    border-bottom: 1px solid #e9ecef; /* Subtle bottom border */
-}
-
-#competences h2 {
-    color: #343a40; /* Dark heading color */
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-#competences p.lead {
-    font-size: 1.25rem;
-    color: #6c757d; /* Muted grey for lead text */
-    max-width: 800px; /* Limit width for readability */
-    margin: 0 auto 40px auto; /* Center lead text and add bottom margin */
-}
-
-#competences h3 {
-    color: #007bff; /* Primary blue for sub-headings */
-    font-size: 2rem;
-    margin-bottom: 25px;
-    font-weight: 500;
-}
-
-.progress {
-    height: 25px; /* Thicker progress bars */
-    border-radius: 5px; /* Slightly rounded corners for progress bars */
-    overflow: hidden; /* Ensure progress bar content stays within bounds */
-    background-color: #e9ecef; /* Lighter background for empty part of bar */
-}
-
-.progress-bar {
-    font-weight: bold;
-    color: #ffffff; /* White text on progress bars */
-    text-align: right; /* Align percentage to the right of the filled bar */
-    padding-right: 10px; /* Space from right edge */
-    transition: width 0.8s ease-in-out; /* Smooth animation for width change */
-}
-
-.d-flex.justify-content-between span {
-    font-weight: 600;
-    color: #343a40; /* Dark text for skill names */
-}
-
-small.text-muted {
-    display: block; /* Ensures description is on a new line */
-    margin-top: 5px;
-    font-size: 0.85rem;
-    color: #6c757d !important; /* Consistent muted grey for small text */
-}
-
-/* Button Styling */
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 12px 28px;
-    font-size: 1.2rem;
-    border-radius: 50px; /* Pill-shaped button */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px); /* Slight lift on hover */
-}
-
-/* Footer Styling (consistent across pages) */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #competences h2 {
-        font-size: 2.2rem;
-    }
-    #competences p.lead {
-        font-size: 1.1rem;
-    }
-    #competences h3 {
-        font-size: 1.75rem;
-        text-align: center;
-    }
-    .progress {
-        height: 20px; /* Slightly smaller bars on mobile */
-    }
-    .btn-primary {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-}
-/* css pour mes projets */
-/* General Body Styling (consistent across pages) */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
-}
-
-/* Navbar Styling (consistent across pages) */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* Main Content Area */
-main {
-    flex-grow: 1; /* Ensures the main content takes up remaining vertical space */
-}
-
-/* Projects Section Styling */
-#projects {
-    background-color: #ffffff; /* White background for the projects section */
-    padding: 60px 0; /* Vertical padding */
-    flex-grow: 1; /* Allows the section to fill available space */
-}
-
-#projects h2 {
-    color: #343a40; /* Dark heading color */
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-.card {
-    border: none; /* Remove default card border */
-    border-radius: 10px; /* Rounded corners for cards */
-    overflow: hidden; /* Ensures image corners are also rounded */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
-}
-
-.card:hover {
-    transform: translateY(-5px); /* Lift card slightly on hover */
-    box-shadow: 0 8px 20px rgba(0,0,0,.15); /* More pronounced shadow on hover */
-}
-
-.card-img-top {
-    height: 220px; /* Fixed height for project images */
-    object-fit: cover; /* Ensures images cover the area without distortion */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card-body {
-    padding: 25px;
-    display: flex; /* Use flexbox for body content */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: space-between; /* Push button to bottom if text is short */
-}
-
-.card-title {
-    color: #007bff; /* Primary blue for card titles */
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.card-text {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 20px; /* Space before the button */
-    flex-grow: 1; /* Allows text to take up available space */
-}
-
-.card .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px; /* Standard button corners */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    align-self: flex-start; /* Align button to the left within the card */
-}
-
-.card .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-/* Footer Styling (consistent across pages) */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #projects h2 {
-        font-size: 2.2rem;
-    }
-    .card-img-top {
-        height: 180px; /* Slightly smaller images on mobile */
-    }
-    .card-title {
-        font-size: 1.3rem;
-    }
-    .card-text {
-        font-size: 0.95rem;
-    }
-}
-
-/* css pour contact */
-/* General Body Styling (consistent across pages) */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
-}
-
-/* Navbar Styling (consistent across pages) */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* Main Content Area */
-main {
-    flex-grow: 1; /* Ensures the main content takes up remaining vertical space */
-}
-
-/* Contact Section Specific Styling */
-#contact {
-    background-color: #ffffff; /* White background for the contact section */
-    padding: 60px 0; /* Vertical padding */
-    flex-grow: 1; /* Allows the section to fill available space */
-}
-
-#contact h2 {
-    color: #343a40; /* Dark heading color */
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-#contact h5, #contact h3 {
-    color: #007bff; /* Primary blue for sub-headings */
-    font-weight: 600;
-}
-
-/* Form Styling */
-#contactForm .form-label {
-    font-weight: bold;
-    color: #333;
-}
-
-#contactForm .form-control {
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    padding: 10px 15px;
-}
-
-#contactForm .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
-}
-
-#contactForm .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-#contactForm .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-/* Social Media Buttons Styling */
-.btn-outline-primary {
-    color: #007bff;
-    border-color: #007bff;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-primary:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.btn-outline-danger { /* For Instagram and YouTube */
-    color: #dc3545;
-    border-color: #dc3545;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-danger:hover {
-    background-color: #dc3545;
-    color: #fff;
-}
-
-.btn-outline-info { /* For Twitter */
-    color: #17a2b8;
-    border-color: #17a2b8;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-info:hover {
-    background-color: #17a2b8;
-    color: #fff;
-}
-
-.btn-outline-dark { /* For Email */
-    color: #343a40;
-    border-color: #343a40;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-dark:hover {
-    background-color: #343a40;
-    color: #fff;
-}
-
-/* Specific styling for LinkedIn, GitHub, Pinterest buttons */
-.btn-dark { /* GitHub */
-    background-color: #343a40;
-    border-color: #343a40;
-    transition: all 0.3s ease;
-}
-.btn-dark:hover {
-    background-color: #23272b;
-    border-color: #1d2124;
-}
-
-.btn-danger { /* Pinterest */
-    background-color: #dc3545;
-    border-color: #dc3545;
-    transition: all 0.3s ease;
-}
-.btn-danger:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-}
-
-/* Icon styling for buttons */
-.btn i {
-    margin-right: 8px; /* Space between icon and text */
-}
-
-/* Horizontal rule styling */
-hr.mt-5.mb-5 {
-    border-top: 2px solid #e9ecef; /* Thicker, light grey horizontal rule */
-}
-
-/* Footer Styling (consistent across pages) */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #contact h2 {
-        font-size: 2.2rem;
-    }
-    #contact .btn-outline-primary,
-    #contact .btn-outline-danger,
-    #contact .btn-outline-info,
-    #contact .btn-outline-dark {
-        width: 100% !important; /* Make social media buttons full width on small screens */
-    }
-    #contact .btn-lg {
-        width: 100% !important; /* Make bottom social buttons full width on small screens */
-    }
-/* css pour index */
-/* General Body Styling */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
-}
-
-/* Navbar Styling */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* About Section Styling */
-.about-section {
-    padding: 60px 0;
-    background-color: #e9ecef; /* Slightly darker background than body */
-    border-bottom: 1px solid #dee2e6; /* Separator line */
-}
-
-.about-section h2 {
-    color: #007bff; /* Bootstrap primary blue */
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.about-section p.lead {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: #555;
-}
-
-/* Hero Section (Carousel) Styling */
-.hero-section {
-    padding: 40px 0; /* Adjust padding as needed */
-    text-align: center;
-    background-color: #ffffff; /* White background for the carousel section */
-    flex-grow: 1; /* Allows it to take up available space */
-}
-
-.carousel {
-    max-width: 800px; /* Limit carousel width */
-    margin: 0 auto; /* Center the carousel */
-    border-radius: 8px; /* Rounded corners for the carousel container */
-    overflow: hidden; /* Ensures content respects border-radius */
-    box-shadow: 0 4px 12px rgba(0,0,0,.15); /* More pronounced shadow */
-}
-
-.carousel-item img {
+.project-img img {
     width: 100%;
-    height: 450px; /* **Adjust this height to make images smaller** */
-    object-fit: cover; /* Ensures images cover the area without distortion */
-    border-radius: 8px; /* Apply border-radius to images inside carousel */
+    height: 100%;
+    object-fit: cover; /* Sa asire foto a plen bwat la san l pa defòme */
 }
 
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for captions */
+/* Efè nwa ki parèt sou foto a lè w pase sourit la */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0; /* Li kache pa defo */
+    transition: 0.5s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1; /* Li parèt lè w pase sourit la */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 20px rgba(56, 239, 125, 0.3);
+}
+
+/* Ti etikèt vèt la (Web Design, etc.) */
+.project-tag {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: var(--primary-neon);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 5;
+}
+
+/* Bouton nan pwojè a */
+.btn-neon {
+    border: 2px solid var(--primary-neon);
+    color: var(--primary-neon);
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-neon:hover {
+    background: var(--primary-neon);
+    color: #000;
+    box-shadow: 0 0 15px var(--primary-neon);
+}
+
+/* ------------------------------------------------------------------- */
+/* --- 4. NAVBAR, FOOTER AK LÒT --- */
+/* ------------------------------------------------------------------- */
+.highlight {
+    color: var(--primary-neon);
+}
+
+.navbar {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary-neon);
+}
+
+footer {
+    background-color: #020617;
+    border-top: 2px solid var(--primary-neon);
+}
+
+.nav-link.active {
+    color: var(--primary-neon) !important;
+    font-weight: bold;
+}
+/* --- STYLE POU IKON SOSYAL YO --- */
+.social-links-container {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--card-bg);
+    border: 1px solid rgba(56, 239, 125, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-btn:hover {
+    color: #000;
+    background: var(--primary-neon);
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--primary-neon);
+}
+
+/* Koulè espesyal lè w pase sourit (hover) */
+.social-btn.yt:hover { background: #ff0000; border-color: #ff0000; color: white; }
+.social-btn.tk:hover { background: #000000; border-color: #ffffff; color: white; }
+.social-btn.fb:hover { background: #1877f2; border-color: #1877f2; color: white; }
+.social-btn.ig:hover { background: #e4405f; border-color: #e4405f; color: white; }
+.social-btn.wa:hover { background: #25d366; border-color: #25d366; color: white; }
+
+
+/* --- CONTACT PAGE STYLES --- */
+.contact-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(56, 239, 125, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.custom-input {
+    background: #0f172a !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: white !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+}
+
+.custom-input:focus {
+    border-color: var(--primary-neon) !important;
+    box-shadow: 0 0 10px rgba(56, 239, 125, 0.2) !important;
+}
+
+/* Grille rezo sosyal yo */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.social-box {
+    background: #1e293b;
     padding: 15px;
-    border-radius: 5px;
-    bottom: 20px; /* Position caption slightly up from the bottom */
-}
-
-.carousel-caption h5 {
-    font-size: 1.75rem;
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-.carousel-caption p {
-    font-size: 1rem;
-    color: #f8f9fa;
-}
-
-/* Main Content Styling */
-main {
-    flex-grow: 1; /* Ensures the main content takes up remaining vertical space */
-}
-
-.hero-section h1.display-4 {
-    color: #007bff;
-    margin-top: 30px;
-    font-size: 3rem;
-}
-
-.hero-section p.lead {
-    font-size: 1.5rem;
-    color: #6c757d; /* Muted grey for lead text */
-    margin-bottom: 30px;
-}
-
-.hero-section .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 12px 28px;
-    font-size: 1.2rem;
-    border-radius: 50px; /* Pill-shaped button */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero-section .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px); /* Slight lift on hover */
-}
-
-/* Footer Styling */
-.footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* pour photes en carrousel */
-/* Hero Section (Carousel) Styling */
-.hero-section {
-    padding: 40px 0; /* Ajustez le padding si nécessaire */
-    text-align: center;
-    background-color: #ffffff; /* Fond blanc pour la section du carrousel */
-    flex-grow: 1; /* Permet d'occuper l'espace disponible */
-}
-
-.carousel {
-    max: width 450px; /* **Largeur maximale du carrousel : diminuée ici** */
-    margin: 0 auto; /* Centre le carrousel */
-    border-radius: 8px; /* Coins arrondis pour le conteneur du carrousel */
-    overflow: hidden; /* Assure que le contenu respecte le border-radius */
-    box-shadow: 0 4px 12px rgba(0,0,0,.15); /* Ombre plus prononcée */
-}
-
-.carousel-item img {
-    width: 90%; /* S'assure que l'image remplit la largeur du carrousel */
-    height: 200px; /* **Hauteur des images : diminuée ici** */
-    object-fit: cover; /* Assure que les images couvrent la zone sans distorsion */
-    border-radius: 8px; /* Applique le border-radius aux images à l'intérieur du carrousel */
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.6); /* Fond noir semi-transparent pour les légendes */
-    padding: 15px;
-    border-radius: 5px;
-    bottom: 20px; /* Positionne la légende légèrement au-dessus du bas */
-}
-
-.carousel-caption h5 {
-    font-size: 1.5rem; /* Taille de police légèrement réduite */
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-.carousel-caption p {
-    font-size: 0.9rem; /* Taille de police légèrement réduite */
-    color: #f8f9fa;
-}
-
-/* css pour apropos */
-/* General Body Styling (consistent with index.html) */
-body {
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(56, 239, 125, 0.1);
+    transition: 0.3s ease;
 }
 
-/* Navbar Styling (consistent with index.html) */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
+.social-box i { font-size: 1.8rem; }
+.social-box span { font-size: 0.8rem; font-weight: 600; }
+
+.social-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-neon);
+    color: var(--primary-neon);
+    box-shadow: 0 5px 15px rgba(56, 239, 125, 0.2);
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background: rgba(56, 239, 125, 0.1);
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    color: #ffffff; /* White text for brand */
+    justify-content: center;
+    color: var(--primary-neon);
 }
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* Main content area */
-main {
-    flex-grow: 1; /* Ensures the main content takes up available vertical space */
-}
-
-/* About Section Specific Styling */
-#about {
-    background-color: #ffffff; /* White background for the about section */
-    padding: 60px 0; /* Vertical padding */
-    border-bottom: 1px solid #e9ecef; /* Subtle bottom border */
-}
-
-.profile-img {
-    width: 250px; /* **Fixed width for profile image** */
-    height: 250px; /* **Fixed height for profile image** */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    border: 5px solid #007bff; /* Primary color border around profile image */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); /* Soft shadow with primary color tint */
-}
-
-h2.display-4 {
-    color: #343a40; /* Darker heading color */
-    font-weight: 600;
-    font-size: 2.8rem;
-}
-
-h2.display-4 .text-primary {
-    color: #007bff !important; /* Bootstrap primary blue */
-}
-
-p.lead {
-    font-size: 1.15rem;
-    color: #555;
-    line-height: 1.8;
-}
-
-h3 {
-    color: #343a40; /* Darker heading color for sub-sections */
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-h6.text-primary {
-    color: #007bff !important; /* Bootstrap primary blue for sub-headings */
-    font-size: 1.1rem;
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
-
-hr.my-5 {
-    border-top: 2px solid #e9ecef; /* Thicker, light grey horizontal rule */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .profile-img {
-        width: 180px;
-        height: 180px;
-    }
-    h2.display-4 {
-        font-size: 2.2rem;
-        text-align: center;
-    }
-    p.lead {
-        text-align: center;
-        font-size: 1rem;
-    }
-    h3 {
-        text-align: center;
-        font-size: 1.75rem;
-    }
-    h6.text-primary {
-        text-align: center;
-        font-size: 1rem;
-    }
-}
-
-/* Footer Styling (consistent with index.html) */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* css pour competences */
-/* General Body Styling (consistent across pages) */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
-}
-
-/* Navbar Styling (consistent across pages) */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* Main Content Area */
-main {
-    flex-grow: 1; /* Ensures the main content takes up remaining vertical space */
-}
-
-/* Competences Section Specific Styling */
-#competences {
-    background-color: #ffffff; /* White background for the skills section */
-    padding: 60px 0; /* Vertical padding */
-    border-bottom: 1px solid #e9ecef; /* Subtle bottom border */
-}
-
-#competences h2 {
-    color: #343a40; /* Dark heading color */
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-#competences p.lead {
-    font-size: 1.25rem;
-    color: #6c757d; /* Muted grey for lead text */
-    max-width: 800px; /* Limit width for readability */
-    margin: 0 auto 40px auto; /* Center lead text and add bottom margin */
-}
-
-#competences h3 {
-    color: #007bff; /* Primary blue for sub-headings */
-    font-size: 2rem;
-    margin-bottom: 25px;
-    font-weight: 500;
-}
-
-.progress {
-    height: 25px; /* Thicker progress bars */
-    border-radius: 5px; /* Slightly rounded corners for progress bars */
-    overflow: hidden; /* Ensure progress bar content stays within bounds */
-    background-color: #e9ecef; /* Lighter background for empty part of bar */
-}
-
-.progress-bar {
-    font-weight: bold;
-    color: #ffffff; /* White text on progress bars */
-    text-align: right; /* Align percentage to the right of the filled bar */
-    padding-right: 10px; /* Space from right edge */
-    transition: width 0.8s ease-in-out; /* Smooth animation for width change */
-}
-
-.d-flex.justify-content-between span {
-    font-weight: 600;
-    color: #343a40; /* Dark text for skill names */
-}
-
-small.text-muted {
-    display: block; /* Ensures description is on a new line */
-    margin-top: 5px;
-    font-size: 0.85rem;
-    color: #6c757d !important; /* Consistent muted grey for small text */
-}
-
-/* Button Styling */
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 12px 28px;
-    font-size: 1.2rem;
-    border-radius: 50px; /* Pill-shaped button */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px); /* Slight lift on hover */
-}
-
-/* Footer Styling (consistent across pages) */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #competences h2 {
-        font-size: 2.2rem;
-    }
-    #competences p.lead {
-        font-size: 1.1rem;
-    }
-    #competences h3 {
-        font-size: 1.75rem;
-        text-align: center;
-    }
-    .progress {
-        height: 20px; /* Slightly smaller bars on mobile */
-    }
-    .btn-primary {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-}
-/* css pour mes projets */
-/* General Body Styling (consistent across pages) */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
-}
-
-/* Navbar Styling (consistent across pages) */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* Main Content Area */
-main {
-    flex-grow: 1; /* Ensures the main content takes up remaining vertical space */
-}
-
-/* Projects Section Styling */
-#projects {
-    background-color: #ffffff; /* White background for the projects section */
-    padding: 60px 0; /* Vertical padding */
-    flex-grow: 1; /* Allows the section to fill available space */
-}
-
-#projects h2 {
-    color: #343a40; /* Dark heading color */
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-.card {
-    border: none; /* Remove default card border */
-    border-radius: 10px; /* Rounded corners for cards */
-    overflow: hidden; /* Ensures image corners are also rounded */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
-}
-
-.card:hover {
-    transform: translateY(-5px); /* Lift card slightly on hover */
-    box-shadow: 0 8px 20px rgba(0,0,0,.15); /* More pronounced shadow on hover */
-}
-
-.card-img-top {
-    height: 220px; /* Fixed height for project images */
-    object-fit: cover; /* Ensures images cover the area without distortion */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card-body {
-    padding: 25px;
-    display: flex; /* Use flexbox for body content */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: space-between; /* Push button to bottom if text is short */
-}
-
-.card-title {
-    color: #007bff; /* Primary blue for card titles */
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.card-text {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 20px; /* Space before the button */
-    flex-grow: 1; /* Allows text to take up available space */
-}
-
-.card .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px; /* Standard button corners */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    align-self: flex-start; /* Align button to the left within the card */
-}
-
-.card .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-/* Footer Styling (consistent across pages) */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #projects h2 {
-        font-size: 2.2rem;
-    }
-    .card-img-top {
-        height: 180px; /* Slightly smaller images on mobile */
-    }
-    .card-title {
-        font-size: 1.3rem;
-    }
-    .card-text {
-        font-size: 0.95rem;
-    }
-}
-
-/* css pour contact */
-/* General Body Styling (consistent across pages) */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Darker text for readability */
-}
-
-/* Navbar Styling (consistent across pages) */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text for brand */
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 8px rgba(255,255,255,0.3); /* Slight glow effect */
-}
-
-.nav-link {
-    font-weight: 500;
-    color: rgba(255,255,255,0.7) !important; /* Lighter white for links */
-    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #ffffff !important; /* White on hover/active */
-}
-
-/* Main Content Area */
-main {
-    flex-grow: 1; /* Ensures the main content takes up remaining vertical space */
-}
-
-/* Contact Section Specific Styling */
-#contact {
-    background-color: #ffffff; /* White background for the contact section */
-    padding: 60px 0; /* Vertical padding */
-    flex-grow: 1; /* Allows the section to fill available space */
-}
-
-#contact h2 {
-    color: #343a40; /* Dark heading color */
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-#contact h5, #contact h3 {
-    color: #007bff; /* Primary blue for sub-headings */
-    font-weight: 600;
-}
-
-/* Form Styling */
-#contactForm .form-label {
-    font-weight: bold;
-    color: #333;
-}
-
-#contactForm .form-control {
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    padding: 10px 15px;
-}
-
-#contactForm .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
-}
-
-#contactForm .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-#contactForm .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-/* Social Media Buttons Styling */
-.btn-outline-primary {
-    color: #007bff;
-    border-color: #007bff;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-primary:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.btn-outline-danger { /* For Instagram and YouTube */
-    color: #dc3545;
-    border-color: #dc3545;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-danger:hover {
-    background-color: #dc3545;
-    color: #fff;
-}
-
-.btn-outline-info { /* For Twitter */
-    color: #17a2b8;
-    border-color: #17a2b8;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-info:hover {
-    background-color: #17a2b8;
-    color: #fff;
-}
-
-.btn-outline-dark { /* For Email */
-    color: #343a40;
-    border-color: #343a40;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-dark:hover {
-    background-color: #343a40;
-    color: #fff;
-}
-
-/* Specific styling for LinkedIn, GitHub, Pinterest buttons */
-.btn-dark { /* GitHub */
-    background-color: #343a40;
-    border-color: #343a40;
-    transition: all 0.3s ease;
-}
-.btn-dark:hover {
-    background-color: #23272b;
-    border-color: #1d2124;
-}
-
-.btn-danger { /* Pinterest */
-    background-color: #dc3545;
-    border-color: #dc3545;
-    transition: all 0.3s ease;
-}
-.btn-danger:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-}
-
-/* Icon styling for buttons */
-.btn i {
-    margin-right: 8px; /* Space between icon and text */
-}
-
-/* Horizontal rule styling */
-hr.mt-5.mb-5 {
-    border-top: 2px solid #e9ecef; /* Thicker, light grey horizontal rule */
-}
-
-/* Footer Styling (consistent across pages) */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    box-shadow: 0 -2px 4px rgba(0,0,0,.1); /* Shadow at the top of the footer */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #contact h2 {
-        font-size: 2.2rem;
-    }
-    #contact .btn-outline-primary,
-    #contact .btn-outline-danger,
-    #contact .btn-outline-info,
-    #contact .btn-outline-dark {
-        width: 100% !important; /* Make social media buttons full width on small screens */
-    }
-    #contact .btn-lg {
-        width: 100% !important; /* Make bottom social buttons full width on small screens */
-    }
-
-}
-
